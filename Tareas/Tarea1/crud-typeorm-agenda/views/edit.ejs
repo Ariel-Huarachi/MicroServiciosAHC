@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Editar contacto</title>
+</head>
+<body>
+  <h1>Editar contacto</h1>
+  <form action="/edit/<%= agenda.id %>" method="POST">
+    <label>Nombres:
+      <input type="text" name="nombres" value="<%= agenda.nombres %>" required>
+    </label><br>
+    
+    <label>Apellidos:
+      <input type="text" name="apellidos" value="<%= agenda.apellidos %>" required>
+    </label><br>
+    
+    <label>Fecha de Nacimiento:
+      <input type="date" name="fecha_nacimiento" value="<%= agenda.fecha_nacimiento?.substring(0, 10) %>" required>
+    </label><br>
+    
+    <label>Dirección:
+      <input type="text" name="direccion" value="<%= agenda.direccion %>">
+    </label><br>
+    
+    <label>Celular:
+      <input type="text" name="celular" value="<%= agenda.celular %>">
+    </label><br>
+    
+    <label>Correo:
+      <input type="email" name="correo" value="<%= agenda.correo %>">
+    </label><br>
+    
+    <button type="submit">Actualizar</button>
+  </form>
+
+  <br>
+  <a href="/">🔙 Volver a la lista</a>
+</body>
+</html>
