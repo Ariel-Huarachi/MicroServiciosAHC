@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agregar contacto</title>
+</head>
+<body>
+  <h1>Nuevo contacto</h1>
+  <form action="/add" method="POST">
+    <label>Nombres: <input type="text" name="nombres" required></label><br>
+    <label>Apellidos: <input type="text" name="apellidos" required></label><br>
+    <label>Fecha de Nacimiento: <input type="date" name="fecha_nacimiento" required></label><br>
+    <label>Dirección: <input type="text" name="direccion"></label><br>
+    <label>Celular: <input type="text" name="celular"></label><br>
+    <label>Correo: <input type="email" name="correo"></label><br>
+    <button type="submit">Guardar</button>
+  </form>
+  <br>
+  <a href="/">🔙 Volver a la lista</a>
+</body>
+</html>
