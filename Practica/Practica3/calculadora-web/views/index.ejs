@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora Web</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Calculadora Web</h1>
+  <form action="/calcular" method="POST">
+    <input type="number" name="a" placeholder="Num1" value="<%= a %>" required>
+<input type="number" name="b" placeholder="Num2" value="<%= b %>" required>
+
+<select name="operacion" required>
+  <option value="sumar" <%= operacion === 'sumar' ? 'selected' : '' %>>Sumar</option>
+  <option value="restar" <%= operacion === 'restar' ? 'selected' : '' %>>Restar</option>
+  <option value="multiplicar" <%= operacion === 'multiplicar' ? 'selected' : '' %>>Multiplicar</option>
+  <option value="dividir" <%= operacion === 'dividir' ? 'selected' : '' %>>Dividir</option>
+</select>
+
+    <button type="submit">Calcular</button>
+  </form>
+  <% if (resultado !== null) { %>
+    <h2>Resultado: <%= resultado %></h2>
+  <% } %>
+</body>
+</html>

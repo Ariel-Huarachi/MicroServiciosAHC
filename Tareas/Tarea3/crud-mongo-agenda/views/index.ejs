@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agenda</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Lista de Contactos</h1>
+  <a href="/add">➕ Nuevo contacto</a>
+  <table border="1" cellpadding="10">
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Fecha Nacimiento</th>
+      <th>Dirección</th>
+      <th>Celular</th>
+      <th>Correo</th>
+      <th>Acciones</th>
+    </tr>
+    <% agendas.forEach(agenda => { %>
+      <tr>
+        <td><%= agenda.nombres %></td>
+        <td><%= agenda.apellidos %></td>
+       <td><%= new Date(agenda.fecha_nacimiento).toISOString().substring(0, 10) %></td>
+        <td><%= agenda.direccion %></td>
+        <td><%= agenda.celular %></td>
+        <td><%= agenda.correo %></td>
+        <td>
+          <a href="/edit/<%= agenda.id %>">✏️</a>
+          <a href="/delete/<%= agenda.id %>">🗑️</a>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>

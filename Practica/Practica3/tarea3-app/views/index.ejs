@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Tareas</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Lista de Tareas</h1>
+    <a class="add-btn" href="/add">➕ Nueva Tarea</a>
+    <table>
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Estado</th>
+          <th>Fecha</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% tareas.forEach(t => { %>
+          <tr>
+            <td><%= t.titulo %></td>
+            <td><%= t.descripcion %></td>
+            <td><%= t.estado %></td>
+            <td><%= t.createdAt.toLocaleDateString() %></td>
+            <td>
+              <a href="/edit/<%= t._id %>">✏️</a>
+              <a href="/delete/<%= t._id %>" onclick="return confirm('¿Eliminar?')">🗑️</a>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
