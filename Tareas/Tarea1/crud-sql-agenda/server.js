@@ -21,6 +21,7 @@ app.get('/add', (req, res) => {
   res.render('add');
 });
 
+
 // Ruta: Procesar nuevo registro
 app.post('/add', (req, res) => {
   const { nombres, apellidos, fecha_nacimiento, direccion, celular, correo } = req.body;
